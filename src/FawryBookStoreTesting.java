@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-public class FawryBookStore {
+public class FawryBookStoreTesting {
     private BookStore store;
 
     @BeforeEach
