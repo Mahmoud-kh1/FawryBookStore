@@ -17,7 +17,7 @@ public class BookStore {
             }
             inventory.put(isbn, book);
         }
-        System.out.println("Quantum book store: Added " + quantity
+        System.out.println("Fawry book store: Added " + quantity
                 + " of \"" + book.getTitle() + "\" (ISBN: " + isbn + ")");
     }
 
@@ -36,7 +36,7 @@ public class BookStore {
             Book b = entry.getValue();
             if (b.getYear() < threshold) {
                 removed.add(b);
-                System.out.println("Quantum book store: Removed outdated ["
+                System.out.println("Fawry book store: Removed outdated ["
                         + b.getTitle() + "] (" + b.getYear() + ")");
                 return true;
             }
@@ -49,10 +49,10 @@ public class BookStore {
         Book book = inventory.get(isbn);
         if (book == null) {
             throw new NoSuchElementException(
-                    "Quantum book store ERROR: ISBN " + isbn + " not found");
+                    "Fawry book store ERROR: ISBN " + isbn + " not found");
         }
         if (book instanceof DemoBook) {
-            throw new IllegalArgumentException("Quantum book store ERROR: this book is not for sale");
+            throw new IllegalArgumentException("Fawry book store ERROR: this book is not for sale");
         }
 
         double total = book.getPrice() * quantity;
@@ -63,7 +63,7 @@ public class BookStore {
         }
         book.dispatch(quantity, email, address);
 
-        System.out.println("Quantum book store: Sold " + quantity
+        System.out.println("Fawry book store: Sold " + quantity
                 + " of \"" + book.getTitle() + "\", Total = $" + total);
         return total;
     }
